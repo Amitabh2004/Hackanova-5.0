@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import "./globals.css";
 import Image from "next/image";
+import Link from "next/link";
 import localFont from "next/font/local";
 import { Home, Info, Heart, Mail, HelpCircle, Menu, X } from "lucide-react";
 
@@ -18,11 +19,8 @@ export default function RootLayout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
 
-  // --- Scroll Logic: Hide header unless at the very top ---
   useEffect(() => {
     const handleScroll = () => {
-      // If scroll is more than 10px from the top, hide it.
-      // Re-show only when scroll returns to 0.
       if (window.scrollY > 10) {
         setShowHeader(false);
       } else {
@@ -47,13 +45,12 @@ export default function RootLayout({
       <body
         className={`${bostonCaps.variable} antialiased text-white selection:bg-neon-cyan/30 bg-black`}
       >
-        {/* --- Top Header with Animation --- */}
+        {/* --- Top Header --- */}
         <header
           className={`fixed top-0 left-0 w-full z-50 pt-4 md:pt-0 px-6 md:px-0 pointer-events-none transition-transform duration-500 ease-in-out
           ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
         >
           <div className="flex md:grid md:grid-cols-3 items-center justify-between w-full mx-auto relative">
-            {/* LEFT: Logo/Hamburger */}
             <div className="flex items-center justify-start pointer-events-auto">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -62,33 +59,34 @@ export default function RootLayout({
                 {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
               </button>
               <div className="hidden md:block">
-                <Image
-                  src="/faviconn.png"
-                  alt="HackAnnova Logo"
-                  width={200}
-                  height={200}
-                  className="h-20 w-auto ml-3 object-contain"
-                />
+                <Link href="/" className="group block">
+                  <Image
+                    src="/faviconnn.png"
+                    alt="HackAnnova Logo"
+                    width={200}
+                    height={200}
+                    className="h-17 w-auto ml-3 object-contain pl-5 transition-all duration-300 group-hover:scale-105"
+                  />
+                </Link>
               </div>
             </div>
 
-            {/* MIDDLE: Nav */}
+            {/* Desktop Nav */}
             <div className="hidden md:flex justify-center items-center pointer-events-auto">
               <nav className="flex gap-6 md:gap-23">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
-                  <a
+                  <Link
                     key={item}
-                    href={`#${item.toLowerCase()}`}
+                    href={`/${item.toLowerCase()}`}
                     style={{ fontFamily: "var(--font-boston)" }}
                     className="text-sm md:text-2xl uppercase tracking-[0.25em] hover:text-neon-cyan transition-all"
                   >
                     {item}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
 
-            {/* RIGHT: TSDW Logo */}
             <div className="flex justify-end pointer-events-auto pr-4">
               <div className="relative group flex items-center justify-center">
                 <div className="md:hidden">
@@ -112,29 +110,29 @@ export default function RootLayout({
               </div>
             </div>
 
-            {/* Mobile Menu Dropdown */}
+            {/* FIX: Mobile Menu Dropdown - Switched to Link and absolute path */}
             {isMenuOpen && (
               <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl flex flex-col items-center py-10 gap-8 pointer-events-auto border-b border-white/10">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
-                  <a
+                  <Link
                     key={item}
-                    href={`#${item.toLowerCase()}`}
+                    href={`/${item.toLowerCase()}`} // Changed from # to /
                     onClick={() => setIsMenuOpen(false)}
                     style={{ fontFamily: "var(--font-boston)" }}
                     className="text-2xl uppercase tracking-[0.2em] text-white hover:text-neon-cyan"
                   >
                     {item}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
         </header>
 
-        {/* --- Sidebar (Remains Static) --- */}
+        {/* Sidebar */}
         <aside className="fixed z-40 flex items-center bg-black/5 backdrop-blur-sm border border-white/5 shadow-2xl pointer-events-auto md:h-fit md:left-0 md:top-1/2 md:-translate-y-1/2 md:ml-4 md:flex-col md:rounded-2xl md:py-10 md:px-3 md:gap-5 bottom-0 left-0 w-full md:w-auto flex-row justify-around py-3 rounded-t-2xl md:rounded-2xl">
           {sidebarItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="group flex flex-col items-center gap-1 transition-all hover:scale-110"
@@ -148,7 +146,7 @@ export default function RootLayout({
               >
                 {item.name}
               </span>
-            </a>
+            </Link>
           ))}
         </aside>
 
