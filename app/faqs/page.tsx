@@ -224,9 +224,9 @@ export default function FAQ() {
           <div className="text-center mb-12">
             <h2
               style={{ fontFamily: "var(--font-boston)" }}
-              className="text-4xl text-white tracking-widest uppercase mb-2"
+              className="text-5xl text-white tracking-widest uppercase mb-2"
             >
-              <DecryptText text="UNRESOLVED_QUERIES?" />
+              UNRESOLVED QUERIES
             </h2>
             <p className="text-neon-cyan/60 font-mono text-[10px] tracking-[0.4em]">
               INITIATING DIRECT UPLINK...

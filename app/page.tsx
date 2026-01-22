@@ -62,9 +62,9 @@ export default function Home() {
             <Image
               src="/devfolio1.png"
               alt="Devfolio"
-              width={250}
-              height={150}
-              className="h-10 md:h-14 w-auto object-contain brightness-110"
+              width={200}
+              height={100}
+              className="h-7 md:h-10 w-auto object-contain brightness-110"
             />
           </a>
         </div>
