@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Clock, MapPin } from "lucide-react";
-
+import { CLD_ASSETS } from "@/utils/cloudinary";
 const timelineData = [
   {
     date: "2nd February 2025",
@@ -169,7 +169,7 @@ export default function Timeline() {
       {/* Background Layer */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="/timeline-bg.jpg"
+          src={CLD_ASSETS.TIMELINE_BG}
           alt="Chronology Background"
           fill
           className="object-cover opacity-30"

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { CLD_ASSETS } from "@/utils/cloudinary";
 
-// --- Sub-component for the "Word Juggle" Scramble Effect ---
 const ScrambleText = ({ text }: { text: string }) => {
   const [displayText, setDisplayText] = useState(text);
   const chars = "!<>-_\\/[]{}—=+*^?#________";
@@ -34,25 +34,18 @@ const ScrambleText = ({ text }: { text: string }) => {
   return <span>{displayText}</span>;
 };
 
-// --- INCREASED STAR DENSITY (150 STARS) ---
-// Defining outside prevents cascading render and "impure function" errors.
 const STATIC_STARS = Array.from({ length: 150 }).map(() => ({
   top: Math.random() * 100,
   left: Math.random() * 100,
-  // Varying sizes for depth (0.5px to 3.5px)
   size: 0.5 + Math.random() * 3,
   duration: 2 + Math.random() * 6,
   delay: Math.random() * 10,
-  // Adding a "glow" variation
   glow: Math.random() > 0.8 ? "0 0 15px #00f3ff" : "0 0 8px white",
 }));
 
 export default function Sponsors() {
   const [hasMounted, setHasMounted] = useState(false);
-  const sponsorLogos = Array.from(
-    { length: 8 },
-    (_, i) => `/sponsor/img${i + 1}.png`,
-  );
+  const sponsorLogos = CLD_ASSETS.SPONSOR_LOGOS;
 
   useEffect(() => {
     const timer = setTimeout(() => setHasMounted(true), 0);
@@ -63,13 +56,10 @@ export default function Sponsors() {
 
   return (
     <main className="relative w-full min-h-screen bg-black flex flex-col items-center pt-32 pb-20 overflow-hidden">
-      {/* --- ENHANCED GALAXY BACKGROUND --- */}
+      {/* --- BACKGROUND --- */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-black" />
-
-        {/* Subtle Radial Gradient to give the center some "nebula" depth */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,243,255,0.05)_0%,_transparent_70%)]" />
-
         <div className="stars-container absolute inset-0">
           {STATIC_STARS.map((star, i) => (
             <div
@@ -96,22 +86,26 @@ export default function Sponsors() {
           <ScrambleText text="OUR PARTNERS" />
         </h1>
 
-        {/* --- SPONSOR GRID: Locked to 2 columns --- */}
+        {/* --- FULL-BLEED SPONSOR GRID --- */}
         <div className="grid grid-cols-2 gap-6 md:gap-16 w-full max-w-4xl">
-          {sponsorLogos.map((path, i) => (
+          {sponsorLogos.map((url, i) => (
             <div
               key={i}
-              className="group relative aspect-video bg-white/5 border border-white/10 backdrop-blur-sm flex items-center justify-center md:p-0 transition-all duration-500 hover:border-neon-cyan/50 hover:bg-white/10 rounded-sm"
+              className="group relative aspect-video bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-neon-cyan/50 hover:bg-white/10 rounded-sm"
             >
-              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity" />
+              {/* Internal neon accents - moved inside overflow-hidden to clip at corners if desired, 
+                  or you can keep them outside for a 'floating' feel */}
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-neon-cyan z-20 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-neon-cyan z-20 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
+              {/* No padding here ensures image reaches the borders */}
+              <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-110">
                 <Image
-                  src={path}
-                  alt={`Sponsor ${i + 1}`}
+                  src={url}
+                  alt={`Sponsor Partner ${i + 1}`}
                   fill
-                  className="object-cover filter brightness-90 group-hover:brightness-110"
+                  className="object-cover brightness-90 group-hover:brightness-110 transition-all"
+                  sizes="(max-width: 768px) 50vw, 400px"
                 />
               </div>
             </div>

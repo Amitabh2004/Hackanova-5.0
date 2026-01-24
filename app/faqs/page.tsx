@@ -9,7 +9,7 @@ import {
   Send,
   CheckCircle2,
 } from "lucide-react";
-
+import { CLD_ASSETS } from "../../utils/cloudinary";
 // --- Sub-component for the "Decryption" Scramble Effect ---
 const DecryptText = ({ text }: { text: string }) => {
   const [displayText, setDisplayText] = useState("");
@@ -182,7 +182,7 @@ export default function FAQ() {
     <main className="relative w-full min-h-screen bg-black overflow-hidden pt-32 pb-32 px-6">
       <div className="fixed inset-0 z-0">
         <Image
-          src="/cosmic-bg.jpg"
+          src={CLD_ASSETS.CHRONOLOGY_BG}
           alt="Cosmic HUD"
           fill
           priority

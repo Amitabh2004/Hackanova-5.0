@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Home, Info, Heart, Mail, HelpCircle, Menu, X } from "lucide-react";
+import { CLD_ASSETS } from "@/utils/cloudinary"; // Import your central asset registry
 
 const bostonCaps = localFont({
   src: "../public/fonts/BostonCaps-nqZJ.ttf",
@@ -61,10 +62,11 @@ export default function RootLayout({
               <div className="hidden md:block">
                 <Link href="/" className="group block">
                   <Image
-                    src="/faviconnn.png"
+                    src={CLD_ASSETS.FAVICON} // Optimized Favicon from Cloudinary
                     alt="HackAnnova Logo"
                     width={200}
                     height={200}
+                    priority // Critical for initial brand visibility
                     className="h-17 w-auto ml-3 object-contain pl-5 transition-all duration-300 group-hover:scale-105"
                   />
                 </Link>
@@ -91,7 +93,7 @@ export default function RootLayout({
               <div className="relative group flex items-center justify-center">
                 <div className="md:hidden">
                   <Image
-                    src="/tsdw2-logo.png"
+                    src={CLD_ASSETS.TSDW_LOGO} // Mobile Partner Logo
                     alt="TSDW Logo"
                     width={180}
                     height={80}
@@ -100,7 +102,7 @@ export default function RootLayout({
                 </div>
                 <div className="hidden md:block">
                   <Image
-                    src="/tsdw2-logo.png"
+                    src={CLD_ASSETS.TSDW_LOGO} // Desktop Partner Logo
                     alt="TSDW Logo"
                     width={400}
                     height={150}
@@ -110,13 +112,13 @@ export default function RootLayout({
               </div>
             </div>
 
-            {/* FIX: Mobile Menu Dropdown - Switched to Link and absolute path */}
+            {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
               <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl flex flex-col items-center py-10 gap-8 pointer-events-auto border-b border-white/10">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
                   <Link
                     key={item}
-                    href={`/${item.toLowerCase()}`} // Changed from # to /
+                    href={`/${item.toLowerCase()}`}
                     onClick={() => setIsMenuOpen(false)}
                     style={{ fontFamily: "var(--font-boston)" }}
                     className="text-2xl uppercase tracking-[0.2em] text-white hover:text-neon-cyan"

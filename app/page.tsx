@@ -1,42 +1,39 @@
+"use client";
 import Image from "next/image";
+import { CLD_ASSETS } from "../utils/cloudinary"; // Import your new links
 
 export default function Home() {
+  const cloudName = "dnbv1ezf3";
+  const videoPublicId = "bg-video2_br1xof";
+  const videoUrl = `https://res.cloudinary.com/${cloudName}/video/upload/q_auto,f_auto/${videoPublicId}.mp4`;
+
   return (
-    /* We keep the container simple for the Home view. 
-       Since scrolling is now handled in globals.css, this will 
-       perfectly frame your hero content.
-    */
     <main className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* --- BACKGROUND LAYER --- */}
-      <div className="fixed inset-0 -z-50 w-full h-full">
+      {/* --- BACKGROUND VIDEO LAYER --- */}
+      <div className="fixed inset-0 -z-10 w-full h-full">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-60"
         >
-          <source src="/bg-video2.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
         </video>
-        {/* Subtle overlay to help the logo and button pop */}
-        <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      {/* --- MAIN HERO CONTENT --- */}
+      {/* --- HERO CONTENT --- */}
       <div className="relative z-10 flex flex-col items-center justify-center p-4">
-        {/* Center Logo: Sized for the 'Simulated Paradigm' aesthetic */}
         <Image
-          src="/logo-date4.png"
+          src={CLD_ASSETS.HERO_LOGO} // Now using Cloudinary
           alt="HackAnnova 5.0 Hero Logo"
           width={1000}
           height={600}
-          priority
+          priority // Prioritizing the LCP element
           className="w-[90vw] md:w-[70vw] lg:w-[60vw] max-w-[600px] h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-4"
         />
 
-        {/* --- REGISTRATION SECTION --- */}
         <div className="flex flex-col items-center gap-4 mt-6">
-          {/* Label: Using Boston Caps via CSS variable */}
           <span
             style={{ fontFamily: "var(--font-boston)" }}
             className="text-white/90 text-sm md:text-2xl uppercase tracking-[0.2em] animate-pulse"
@@ -44,23 +41,14 @@ export default function Home() {
             Register for Free
           </span>
 
-          {/* Devfolio Logo Button: Perfected Shape with White Background */}
           <a
             href="YOUR_DEVFOLIO_LINK_HERE"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex items-center justify-center 
-                       px-8 py-3 md:px-12 md:py-4 
-                       bg-white 
-                       border border-neon-cyan/50 
-                       transition-all duration-300 
-                       hover:border-neon-cyan 
-                       hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] 
-                       rounded-none"
+            className="group relative flex items-center justify-center px-8 py-3 md:px-12 md:py-4 bg-white border border-neon-cyan/50 transition-all duration-300 hover:border-neon-cyan hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] rounded-none"
           >
-            {/* Devfolio Logo: Scaled up as requested */}
             <Image
-              src="/devfolio1.png"
+              src={CLD_ASSETS.DEVFOLIO_LOGO} // Optimized Devfolio Logo from Cloudinary
               alt="Devfolio"
               width={200}
               height={100}

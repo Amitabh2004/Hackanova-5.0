@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { CLD_ASSETS } from "@/utils/cloudinary";
 
 // --- Binary Glitch Effect ---
 const BinaryGlitch = ({ amount }: { amount: string }) => {
@@ -114,7 +115,7 @@ export default function Prizes() {
       {/* --- BACKGROUND LAYER --- */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="/prize-bg.jpg"
+          src={CLD_ASSETS.PRIZES_BG}
           alt="Background"
           fill
           className="object-cover opacity-40"

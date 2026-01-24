@@ -12,6 +12,7 @@ import {
   Globe,
   LucideIcon,
 } from "lucide-react";
+import { CLD_ASSETS } from "@/utils/cloudinary";
 
 // --- Decryption Effect ---
 const DecryptText = ({ text }: { text: string }) => {
@@ -105,7 +106,7 @@ export default function Contact() {
     <main className="relative w-full min-h-screen bg-black overflow-hidden pt-24 md:pt-32 pb-32 px-4 md:px-6">
       <div className="fixed inset-0 z-0">
         <Image
-          src="/cosmic-bg.jpg"
+          src={CLD_ASSETS.CHRONOLOGY_BG}
           alt="Cosmic Background"
           fill
           className="object-cover opacity-70"
