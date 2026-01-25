@@ -3,6 +3,8 @@
  * Account: dnbv1ezf3
  */
 
+import { get } from "http";
+
 const CLOUD_NAME = "dnbv1ezf3";
 
 /**
@@ -30,6 +32,7 @@ export const getCldVideoUrl = (publicId: string) => {
 export const CLD_ASSETS = {
   // Backgrounds
   MAIN_BG_VIDEO: getCldVideoUrl("bg-video2_br1xof"),
+  TRACK_BG: getCldImageUrl("ai-generated-9111148_1920_jpht0f"),
   CHRONOLOGY_BG: getCldImageUrl("cosmic-bg_c3b3au"),
   TIMELINE_BG: getCldImageUrl("timeline-bg_eqfux4"),
   PRIZES_BG: getCldImageUrl("prize-bg_muc38t"),
@@ -53,7 +56,7 @@ export const CLD_ASSETS = {
   ],
   // Branding & Logos
   HERO_LOGO: getCldImageUrl("logo-date4_fclter"),
-  FAVICON: getCldImageUrl("faviconnn_dsptku"),
+  FAVICON: getCldImageUrl("1000193944_joxrs0"),
   TSDW_LOGO: getCldImageUrl("tsdw2-logo_eigacr"),
   SPONSOR_LOGOS: [
     getCldImageUrl("img1_mdaulu"), // Replace with actual Public IDs from dashboard
@@ -65,6 +68,13 @@ export const CLD_ASSETS = {
     getCldImageUrl("img7_wqadqn"),
     getCldImageUrl("img8_ikyvqp"),
   ],
+  TISHA: getCldImageUrl("tisha_amod66"),
+  PIYUSH: getCldImageUrl("piyush_wxbwdl"),
+  AMITABH: getCldImageUrl("amitabh_h8ujhr"),
+  SATISH: getCldImageUrl("satish_mkaxb3"),
+  SOURISH: getCldImageUrl("sourish_qrbrfp"),
+  SMITA: getCldImageUrl("smita_kpx76s"),
+  SIDDHESH: getCldImageUrl("siddhesh_i9m2ew"),
   // Platform & Partners
   DEVFOLIO_LOGO: getCldImageUrl("devfolio1_sdgyyn"),
 };

@@ -1,77 +1,157 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { Construction, Zap } from "lucide-react";
+import { CLD_ASSETS } from "@/utils/cloudinary";
+
+const SystemLink = ({ text, href }: { text: string; href: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative inline-block px-1.5 font-bold text-white transition-all duration-300 group mx-1"
+  >
+    <span className="relative z-10">{text}</span>
+    <span className="absolute inset-0 bg-cyan-600/60 group-hover:bg-cyan-500 transition-colors -skew-x-12" />
+    <span className="absolute -bottom-0.5 left-0 w-full h-[1px] bg-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+  </a>
+);
 
 export default function Tracks() {
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setHasMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!hasMounted) return <div className="min-h-screen bg-black" />;
+  const [hovered, setHovered] = useState<"SOFT" | "HARD" | null>(null);
 
   return (
-    <main className="relative w-full min-h-screen bg-black flex items-center justify-center overflow-hidden px-6">
-      {/* --- COSMIC BACKGROUND LAYER --- */}
+    <main className="relative w-full min-h-screenoverflow-x-hidden flex flex-col">
+      {/* --- FIXED BACKGROUND LAYER --- */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="/cosmic-bg.jpg"
-          alt="Tracks Background"
+          src={CLD_ASSETS.TRACK_BG}
+          alt="Horizon Background"
           fill
-          className="object-cover opacity-20"
           priority
+          className="object-cover opacity-30" // Increased opacity from 10 to 30
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+        {/* Subtle dark overlays to ensure text remains the priority */}
       </div>
 
-      {/* --- CENTRAL TERMINAL --- */}
-      <div className="relative z-10 text-center max-w-2xl">
-        <div className="flex justify-center mb-8">
-          <div className="p-4 bg-cyan-500/10 rounded-full border border-cyan-500/30 animate-pulse">
-            <Construction className="text-cyan-400" size={48} />
-          </div>
-        </div>
-
-        <div className="space-y-6">
-          <h1
+      {/* --- RESPONSIVE DUAL PILLARS --- */}
+      <div className="relative z-10 flex flex-col md:flex-row h-auto md:h-[60vh] w-full border-b border-white/5 pt-32 md:pt-20">
+        {/* SOFTWARE PILLAR */}
+        <div
+          onMouseEnter={() => setHovered("SOFT")}
+          onMouseLeave={() => setHovered(null)}
+          className={`relative flex-1 flex flex-col items-center justify-center py-16 md:py-0 transition-all duration-700
+          ${hovered === "HARD" ? "opacity-20 scale-95 blur-sm" : "opacity-100"}`}
+        >
+          <div
+            className={`absolute inset-0 bg-cyan-500/10 transition-opacity duration-500 ${hovered === "SOFT" ? "opacity-100" : "opacity-0"}`}
+          />
+          <h2
             style={{ fontFamily: "var(--font-boston)" }}
-            className="text-5xl md:text-8xl text-white tracking-tighter uppercase italic drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]"
+            className="text-7xl md:text-[12rem] text-white/5 absolute select-none"
           >
-            Banana Bacha <br /> Hai Abhi
-          </h1>
+            SOFT
+          </h2>
+          <div className="relative z-20 text-center">
+            <h3 className="text-5xl md:text-8xl font-black text-cyan-400 tracking-tighter mb-2">
+              SOFTWARE
+            </h3>
+            <p className="font-mono text-[10px] tracking-[0.5em] text-white/60 mb-8 uppercase">
+              Agentic AI Paradigm
+            </p>
+            <a
+              href="/software-brochure.pdf"
+              className="px-10 py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+            >
+              Get Brochure
+            </a>
+          </div>
+        </div>
 
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-[1px] w-12 bg-white/20" />
-            <span className="text-cyan-400 font-mono text-xl tracking-[0.5em] uppercase animate-bounce">
-              CHILL
-            </span>
-            <div className="h-[1px] w-12 bg-white/20" />
+        {/* HARDWARE PILLAR */}
+        <div
+          onMouseEnter={() => setHovered("HARD")}
+          onMouseLeave={() => setHovered(null)}
+          className={`relative flex-1 flex flex-col items-center justify-center py-16 md:py-0 transition-all duration-700 border-t md:border-t-0 md:border-l border-white/5
+          ${hovered === "SOFT" ? "opacity-20 scale-95 blur-sm" : "opacity-100"}`}
+        >
+          <div
+            className={`absolute inset-0 bg-orange-500/10 transition-opacity duration-500 ${hovered === "HARD" ? "opacity-100" : "opacity-0"}`}
+          />
+          <h2
+            style={{ fontFamily: "var(--font-boston)" }}
+            className="text-7xl md:text-[12rem] text-white/5 absolute select-none"
+          >
+            HARD
+          </h2>
+          <div className="relative z-20 text-center">
+            <h3 className="text-5xl md:text-8xl font-black text-orange-500 tracking-tighter mb-2">
+              HARDWARE
+            </h3>
+            <p className="font-mono text-[10px] tracking-[0.5em] text-white/60 mb-8 uppercase">
+              Industry 5.0 Paradigm
+            </p>
+            <a
+              href="/hardware-brochure.pdf"
+              className="px-10 py-4 bg-orange-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+            >
+              Get Brochure
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* --- GUIDELINES SECTION --- */}
+      <div className="relative z-10 flex-1 p-8 md:p-20backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-6 mb-16 border-l-4 border-cyan-500 pl-6">
+            <h4
+              style={{ fontFamily: "var(--font-boston)" }}
+              className="text-4xl md:text-6xl text-white italic tracking-tighter uppercase"
+            >
+              System Guidelines
+            </h4>
+            <div className="hidden md:block h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" />
           </div>
 
-          <p className="text-white/40 font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] leading-relaxed max-w-md mx-auto">
-            The neural link for domain specifications is currently under
-            construction. Estimated time of arrival: T-Minus 24 Hours.
-          </p>
-        </div>
-
-        {/* Decorative Grid */}
-        <div className="mt-16 flex justify-center gap-2 opacity-30">
-          {[...Array(5)].map((_, i) => (
-            <div key={i} className="w-8 h-1 bg-cyan-500 rounded-full" />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 pb-24">
+            {[
+              "TEAM SIZE: 2-4 MEMBERS ONLY.",
+              "INDIVIDUAL APPLICATIONS WILL NOT BE ACCEPTED.",
+              "REGISTRATION IS ABSOLUTELY FREE FOR ALL THE PARTICIPANTS.",
+              <>
+                REGISTER YOUR TEAMS ON THIS{" "}
+                <SystemLink text="GOOGLE FORM" href="#" /> AND THEN FOLLOW THE
+                STEPS FOR PLATFORM SUBMISSION.
+              </>,
+              <>
+                ALL COMMUNICATION WILL TAKE PLACE VIA{" "}
+                <SystemLink text="DISCORD" href="#" />; ENSURE ALL MEMBERS ARE
+                ON THE CHANNEL.
+              </>,
+              "YOUR IDEA SHOULD ALIGN WITH THE GENERALIZED HACKATHON THEME.",
+              <>
+                USE THE PPT TEMPLATE TO PREPARE A{" "}
+                <SystemLink text="PPT" href="#" /> FOR YOUR IDEA FOR{" "}
+                <SystemLink text="DEVFOLIO" href="#" />.
+              </>,
+              "ALL THE TEAM MEMBERS MUST UPLOAD THE SAME PPT TO THE DEVFOLIO FORM.",
+              "THE TEAM LEADER SHOULD CREATE A TEAM AND SHARE THE INVITE CODE.",
+            ].map((content, i) => (
+              <div key={i} className="flex gap-6 group">
+                <span className="text-3xl font-black text-white/20 group-hover:text-cyan-500 transition-colors">
+                  0{i + 1}
+                </span>
+                <p className="text-lg md:text-xl text-white/ leading-relaxed group-hover:text-white transition-colors">
+                  {content}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Background HUD Detail */}
-      <div className="fixed bottom-10 right-10 pointer-events-none opacity-20">
-        <div className="flex items-center gap-2 text-white font-mono text-[8px] tracking-widest uppercase">
-          <Zap size={10} className="text-cyan-400" /> System_Status:
-          Pending_Upload
-        </div>
-      </div>
+      {/* Decorative Scanline Overlay */}
+      <div className="pointer-events-none fixed inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px]" />
     </main>
   );
 }

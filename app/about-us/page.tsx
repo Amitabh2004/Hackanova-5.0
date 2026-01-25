@@ -8,6 +8,7 @@ interface TeamMember {
   name: string;
   role: string;
   img: string;
+  phone: string;
 }
 
 // --- Scramble Text Effect ---
@@ -30,7 +31,10 @@ const ScrambleText = ({ text }: { text: string }) => {
 
       setDisplayText(scrambled);
       frame++;
-      if (frame > totalFrames) clearInterval(interval);
+      if (frame > totalFrames) {
+        setDisplayText(text);
+        clearInterval(interval);
+      }
     }, 40);
 
     return () => clearInterval(interval);
@@ -39,11 +43,12 @@ const ScrambleText = ({ text }: { text: string }) => {
   return <span>{displayText}</span>;
 };
 
-// --- Cyber Team Card ---
+// --- Updated Cyber Team Card (Name, Role, Phone Only) ---
 const TeamCard = ({ member }: { member: TeamMember }) => (
   <div className="group relative transition-all duration-500 [perspective:1000px] hover:[transform:rotateX(5deg)_rotateY(5deg)_translateZ(50px)] w-[45%] md:w-64 shrink-0">
     <div className="relative p-[1px] md:p-[2px] bg-gradient-to-br from-cyan-400 via-purple-500 to-cyan-400 [clip-path:polygon(15%_0%,_85%_0%,_100%_15%,_100%_85%,_85%_100%,_15%_100%,_0%_85%,_0%_15%)]">
       <div className="bg-[#0a0a0c]/95 backdrop-blur-2xl p-3 md:p-6 flex flex-col items-center [clip-path:polygon(15%_0%,_85%_0%,_100%_15%,_100%_85%,_85%_100%,_15%_100%,_0%_85%,_0%_15%)]">
+        {/* Name and Role Section */}
         <div className="text-center mb-2 md:mb-4 space-y-1">
           <h3
             style={{ fontFamily: "var(--font-boston)" }}
@@ -56,26 +61,30 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
           </p>
         </div>
 
+        {/* Profile Image */}
         <div className="relative w-full aspect-[3/4] mb-2 md:mb-4 overflow-hidden border border-white/5">
           <Image
             src={member.img}
             alt={member.name}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
+            sizes="(max-width: 768px) 45vw, 250px"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-transparent to-transparent opacity-60" />
         </div>
 
+        {/* Phone Number Section */}
         <div className="w-full py-1 md:py-2 px-1 md:px-3 border border-cyan-400/30 bg-cyan-400/5 rounded-sm text-center">
-          <p className="text-[6px] md:text-[9px] text-cyan-400 font-mono tracking-tighter truncate">
-            architect@hackannova.in
+          <p className="text-[7px] md:text-[11px] text-white font-mono tracking-widest uppercase opacity-70 mb-0.5">
+            Contact
           </p>
-          <p className="text-[6px] md:text-[9px] text-white font-mono mt-0.5 md:mt-1">
-            +91 00000 00000
+          <p className="text-[8px] md:text-[12px] text-cyan-400 font-mono font-bold tracking-wider">
+            {member.phone}
           </p>
         </div>
       </div>
     </div>
+    {/* Hover Glow Effect */}
     <div className="absolute inset-0 -z-10 bg-cyan-400/20 blur-2xl md:blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
   </div>
 );
@@ -83,58 +92,67 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
 export default function AboutUs() {
   const marqueeImages = CLD_ASSETS.MARQUEE_IMAGES;
 
+  // Updated Data with actual Names and Phone Numbers
   const team = {
     row1: [
       {
-        name: "ARCHITECT 1",
+        name: "TISHA",
         role: "Technical Secretary",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.TISHA,
+        phone: "+91 9321551512",
       },
       {
-        name: "ARCHITECT 2",
+        name: "PIYUSH",
         role: "Associate Tech Secretary",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.PIYUSH,
+        phone: "+91 9321679469",
       },
       {
-        name: "ARCHITECT 3",
+        name: "AMITABH",
         role: "Technical Advisory",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.AMITABH,
+        phone: "+91 8429051078",
       },
     ],
     row2: [
       {
-        name: "ARCHITECT 4",
+        name: "SATISH",
         role: "Technical Coordinator",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.SATISH,
+        phone: "+91 9967142376",
       },
       {
-        name: "ARCHITECT 5",
+        name: "SATISH", // Note: Verify if there is a second Satish or if this is a duplicate
         role: "Technical Coordinator",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.SATISH,
+        phone: "+91 00000 00000",
       },
     ],
     row3: [
       {
-        name: "ARCHITECT 6",
+        name: "SOURISH",
         role: "Joint Tech Secretary",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.SOURISH,
+        phone: "+91 7506317359",
       },
       {
-        name: "ARCHITECT 7",
+        name: "SMITA",
         role: "Joint Tech Secretary",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.SMITA,
+        phone: "+91 8451950320",
       },
       {
-        name: "ARCHITECT 8",
+        name: "SIDDHESH",
         role: "Joint Tech Secretary",
-        img: "/dummy-img.png",
+        img: CLD_ASSETS.SIDDHESH,
+        phone: "+91 9372985036",
       },
     ],
   };
 
   return (
     <main className="relative w-full min-h-screen bg-black pt-24 pb-20">
-      {/* --- BACKGROUND LAYER --- */}
+      {/* Background Layer */}
       <div className="fixed inset-0 z-0">
         <Image
           src={CLD_ASSETS.ABOUT_US_BG}
@@ -167,9 +185,7 @@ export default function AboutUs() {
               HackAnnova 5.0, organized by TSDW, is a 24-hour innovation sprint
               focusing on{" "}
               <span className="text-cyan-400">Agentic AI and Industry 5.0</span>
-              . Hosted at TCET, it provides a platform for engineers to solve
-              real-world problems under the theme &quot;A Simulated
-              Paradigm&quot;.
+              .
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-cyan-400/50 transition-colors">
@@ -181,14 +197,12 @@ export default function AboutUs() {
             </h2>
             <p className="text-white/60 leading-relaxed font-light">
               The TCET Student Development and Welfare Association (TSDW) is the
-              apex student body of TCET Mumbai. Since 2004, we have dedicated
-              ourselves to fostering technical growth and student welfare
-              through high-impact events.
+              apex student body of TCET Mumbai.
             </p>
           </div>
         </div>
 
-        {/* --- CLOUDINARY INFINITY MARQUEE --- */}
+        {/* Gallery Marquee */}
         <div className="overflow-hidden py-10 mb-32 border-y border-white/5 relative">
           <div className="flex gap-8 animate-marquee whitespace-nowrap">
             {[...marqueeImages, ...marqueeImages].map((url, i) => (
@@ -201,19 +215,20 @@ export default function AboutUs() {
                   alt={`Gallery ${i}`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 300px, 400px"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* --- HIERARCHICAL TEAM SECTION --- */}
+        {/* Hierarchical Team Section */}
         <div className="space-y-16 md:space-y-32">
           <h2
             style={{ fontFamily: "var(--font-boston)" }}
             className="text-4xl md:text-7xl text-center text-white uppercase italic tracking-widest"
           >
-            <ScrambleText text="MEET THE ARCHITECTS" />
+            <ScrambleText text="TECHNICAL TEAM" />
           </h2>
 
           <div className="flex flex-wrap justify-center gap-6 md:gap-16">

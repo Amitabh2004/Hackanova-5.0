@@ -5,7 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Home, Info, Heart, Mail, HelpCircle, Menu, X } from "lucide-react";
-import { CLD_ASSETS } from "@/utils/cloudinary"; // Import your central asset registry
+// Import Brand Icons for the right sidebar
+import {
+  SiDiscord,
+  SiInstagram,
+  SiLinkedin,
+  SiYoutube,
+  SiGmail,
+} from "react-icons/si";
+import { CLD_ASSETS } from "@/utils/cloudinary";
 
 const bostonCaps = localFont({
   src: "../public/fonts/BostonCaps-nqZJ.ttf",
@@ -41,6 +49,35 @@ export default function RootLayout({
     { name: "FAQ", icon: <HelpCircle size={24} />, href: "/faqs" },
   ];
 
+  // --- Right Social Sidebar Items ---
+  const socialItems = [
+    {
+      name: "Discord",
+      icon: <SiDiscord size={20} />,
+      href: "https://discord.gg/yourlink",
+    },
+    {
+      name: "Instagram",
+      icon: <SiInstagram size={20} />,
+      href: "https://instagram.com/tcet_tsdw",
+    },
+    {
+      name: "LinkedIn",
+      icon: <SiLinkedin size={20} />,
+      href: "https://linkedin.com/yourlink",
+    },
+    {
+      name: "YouTube",
+      icon: <SiYoutube size={20} />,
+      href: "https://youtube.com/@tcet_tsdw",
+    },
+    {
+      name: "Gmail",
+      icon: <SiGmail size={20} />,
+      href: "mailto:tcet.hackanova@gmail.com",
+    },
+  ];
+
   return (
     <html lang="en">
       <body
@@ -62,18 +99,17 @@ export default function RootLayout({
               <div className="hidden md:block">
                 <Link href="/" className="group block">
                   <Image
-                    src={CLD_ASSETS.FAVICON} // Optimized Favicon from Cloudinary
+                    src={CLD_ASSETS.FAVICON}
                     alt="HackAnnova Logo"
                     width={200}
                     height={200}
-                    priority // Critical for initial brand visibility
+                    priority
                     className="h-17 w-auto ml-3 object-contain pl-5 transition-all duration-300 group-hover:scale-105"
                   />
                 </Link>
               </div>
             </div>
 
-            {/* Desktop Nav */}
             <div className="hidden md:flex justify-center items-center pointer-events-auto">
               <nav className="flex gap-6 md:gap-23">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
@@ -93,7 +129,7 @@ export default function RootLayout({
               <div className="relative group flex items-center justify-center">
                 <div className="md:hidden">
                   <Image
-                    src={CLD_ASSETS.TSDW_LOGO} // Mobile Partner Logo
+                    src={CLD_ASSETS.TSDW_LOGO}
                     alt="TSDW Logo"
                     width={180}
                     height={80}
@@ -102,7 +138,7 @@ export default function RootLayout({
                 </div>
                 <div className="hidden md:block">
                   <Image
-                    src={CLD_ASSETS.TSDW_LOGO} // Desktop Partner Logo
+                    src={CLD_ASSETS.TSDW_LOGO}
                     alt="TSDW Logo"
                     width={400}
                     height={150}
@@ -112,7 +148,6 @@ export default function RootLayout({
               </div>
             </div>
 
-            {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
               <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl flex flex-col items-center py-10 gap-8 pointer-events-auto border-b border-white/10">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
@@ -131,7 +166,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Sidebar */}
+        {/* Left Sidebar */}
         <aside className="fixed z-40 flex items-center bg-black/5 backdrop-blur-sm border border-white/5 shadow-2xl pointer-events-auto md:h-fit md:left-0 md:top-1/2 md:-translate-y-1/2 md:ml-4 md:flex-col md:rounded-2xl md:py-10 md:px-3 md:gap-5 bottom-0 left-0 w-full md:w-auto flex-row justify-around py-3 rounded-t-2xl md:rounded-2xl">
           {sidebarItems.map((item) => (
             <Link
@@ -150,6 +185,33 @@ export default function RootLayout({
               </span>
             </Link>
           ))}
+        </aside>
+
+        {/* --- Right Social Sidebar --- */}
+        <aside className="hidden md:flex fixed z-40 right-4 top-1/2 -translate-y-1/2 flex-col items-center gap-6 bg-white/5 backdrop-blur-md border border-white/10 py-8 px-3 rounded-full pointer-events-auto">
+          {socialItems.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex items-center justify-center transition-all hover:scale-125"
+            >
+              {/* Floating Tooltip */}
+              <span
+                style={{ fontFamily: "var(--font-boston)" }}
+                className="absolute right-full mr-4 px-2 py-1 bg-neon-cyan text-black text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap"
+              >
+                {social.name}
+              </span>
+
+              <div className="text-white/60 group-hover:text-white transition-colors drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(0,243,255,0.8)]">
+                {social.icon}
+              </div>
+            </a>
+          ))}
+          {/* Vertical Decorative Accent */}
+          <div className="w-[1px] h-12 bg-gradient-to-b from-neon-cyan to-transparent mt-2 opacity-50" />
         </aside>
 
         {children}
