@@ -9,7 +9,7 @@ import { Home, Info, Heart, Mail, HelpCircle, Menu, X } from "lucide-react";
 import {
   SiDiscord,
   SiInstagram,
-  SiLinkedin,
+  SiWhatsapp,
   SiYoutube,
   SiGmail,
 } from "react-icons/si";
@@ -62,9 +62,9 @@ export default function RootLayout({
       href: "https://instagram.com/tcet_tsdw",
     },
     {
-      name: "LinkedIn",
-      icon: <SiLinkedin size={20} />,
-      href: "https://linkedin.com/yourlink",
+      name: "WhatsApp",
+      icon: <SiWhatsapp size={20} />,
+      href: "https://wa.me/918429051078?text=Hi%20HackAnnova%20Team!",
     },
     {
       name: "YouTube",
@@ -81,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bostonCaps.variable} antialiased text-white selection:bg-neon-cyan/30 bg-black`}
+        className={`${bostonCaps.variable} antialiased text-white selection:bg-neon-cyan/30 bg-black min-h-screen flex flex-col`}
       >
         {/* --- Top Header --- */}
         <header
@@ -110,6 +110,7 @@ export default function RootLayout({
               </div>
             </div>
 
+            {/* Desktop Nav */}
             <div className="hidden md:flex justify-center items-center pointer-events-auto">
               <nav className="flex gap-6 md:gap-23">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
@@ -148,6 +149,7 @@ export default function RootLayout({
               </div>
             </div>
 
+            {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
               <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl flex flex-col items-center py-10 gap-8 pointer-events-auto border-b border-white/10">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
@@ -214,7 +216,16 @@ export default function RootLayout({
           <div className="w-[1px] h-12 bg-gradient-to-b from-neon-cyan to-transparent mt-2 opacity-50" />
         </aside>
 
-        {children}
+        {/* Main Content Area */}
+        <main className="flex-grow">{children}</main>
+
+        {/* --- Small Footer --- */}
+        <footer className="w-full py-4 bg-black border-t border-white/5 z-10">
+          <p className="text-center text-[9px] md:text-[11px] text-white/40 uppercase tracking-[0.2em] font-mono">
+            © 2025 All rights reserved | Made with{" "}
+            <span className="text-neon-cyan">❤</span> by the Hackanova Team
+          </p>
+        </footer>
       </body>
     </html>
   );
