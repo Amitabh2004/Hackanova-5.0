@@ -135,7 +135,7 @@ export default function Contact() {
             icon={Phone}
             label="Voice_Uplink"
             value="+91 84290 51078"
-            href="tel:+910000000000"
+            href="tel:+918429051078"
           />
           <ContactModule
             icon={Mail}
