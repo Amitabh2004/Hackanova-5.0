@@ -108,7 +108,7 @@ export default function Tracks() {
               style={{ fontFamily: "var(--font-boston)" }}
               className="text-4xl md:text-6xl text-white italic tracking-tighter uppercase"
             >
-              System Guidelines
+              Participant Guidelines
             </h4>
             <div className="hidden md:block h-[1px] flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" />
           </div>
@@ -125,8 +125,11 @@ export default function Tracks() {
               </>,
               <>
                 ALL COMMUNICATION WILL TAKE PLACE VIA{" "}
-                <SystemLink text="DISCORD" href="#" />; ENSURE ALL MEMBERS ARE
-                ON THE CHANNEL.
+                <SystemLink
+                  text="DISCORD"
+                  href="https://discord.gg/FN9WVwfvdF"
+                />
+                ; ENSURE ALL MEMBERS ARE ON THE CHANNEL.
               </>,
               "YOUR IDEA SHOULD ALIGN WITH THE GENERALIZED HACKATHON THEME.",
               <>

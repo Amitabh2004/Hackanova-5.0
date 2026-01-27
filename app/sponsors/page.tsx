@@ -83,7 +83,7 @@ export default function Sponsors() {
           style={{ fontFamily: "var(--font-boston)" }}
           className="text-5xl md:text-8xl text-neon-cyan text-center mb-24 tracking-tighter drop-shadow-[0_0_20px_#00f3ff]"
         >
-          <ScrambleText text="OUR PARTNERS" />
+          <ScrambleText text="Past Partners" />
         </h1>
 
         {/* --- FULL-BLEED SPONSOR GRID --- */}

@@ -125,7 +125,7 @@ export default function Contact() {
             <DecryptText text="ESTABLISH UPLINK" />
           </h1>
           <p className="text-neon-cyan font-mono text-[8px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.8em] mt-2 md:mt-4 opacity-70 px-4">
-            HackAnnova 5.0 // Base Station Comms
+            Hackanova 5.0 // Base Station Comms
           </p>
         </div>
 
@@ -134,14 +134,14 @@ export default function Contact() {
           <ContactModule
             icon={Phone}
             label="Voice_Uplink"
-            value="+91 00000 00000"
+            value="+91 84290 51078"
             href="tel:+910000000000"
           />
           <ContactModule
             icon={Mail}
             label="Data_Mail"
-            value="architect@hackannova.in"
-            href="mailto:architect@hackannova.in"
+            value="tcet.hackanova@gmail.com"
+            href="mailto:tcet.hackanova@gmail.com"
           />
           <ContactModule
             icon={LinkIcon}
@@ -152,8 +152,8 @@ export default function Contact() {
           <ContactModule
             icon={MapPin}
             label="Base_Station"
-            value="TCET, Mumbai"
-            href="#"
+            value="TCET, Mumbai, India"
+            href="https://www.google.com/maps/place/Thakur+College+of+Engineering+and+Technology/@19.2063,72.8643058,15z/data=!3m1!4b1!4m6!3m5!1s0x3be7b0e57647569d:0xc0aec329c82d3555!8m2!3d19.2063003!4d72.8746056!16s%2Fm%2F0fqs6yw?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D"
           />
         </div>
 
@@ -179,8 +179,8 @@ export default function Contact() {
             {/* The Map */}
             <div className="absolute inset-4 md:inset-6 overflow-hidden rounded-full border border-white/20 z-10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.9258908759564!2d72.87203927596875!3d19.20934054778107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0e57647569d%3A0xc0aecb29c82d3555!2sThakur%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1706000000000!5m2!1sen!2sin"
-                className="w-full h-full grayscale invert opacity-80 contrast-125 scale-110"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.123456789!2d72.8724169!3d19.2063003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0e57647569d%3A0xc0aecb29c82d3555!2sThakur+College+of+Engineering+and+Technology!5e0!3m2!1sen!2sin!4v1706285640000!5m2!1sen!2sin"
+                className="w-full h-full scale-110" // Removed grayscale, invert, opacity, and contrast
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

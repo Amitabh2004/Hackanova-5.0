@@ -141,25 +141,26 @@ export default function FAQ() {
 
   const faqData = [
     {
-      question: "What is provided?",
+      question: "What resources are provided?",
       answer:
-        "High-speed Wi-Fi, food, sleeping zones, and Agentic AI mentor support.",
+        "Participants get access to mentoring sessions & technical support during the event.",
     },
     {
-      question: "Who can join?",
-      answer: "Students and professionals. All skill levels are welcome.",
+      question: "Who is eligible to apply?",
+      answer:
+        "Students with passion for solving problems. All skill levels are welcome.",
     },
     {
-      question: "Is it free?",
-      answer: "Yes, HackAnnova 5.0 is completely free for shortlisted teams.",
+      question: "Is there any registration fee free?",
+      answer: "No, Hackanova 5.0 is completely free for shortlisted teams.",
     },
     {
       question: "How to get updates?",
       answer: "Follow our TSDW social handles and join our Discord.",
     },
     {
-      question: "What are the prizes?",
-      answer: "Cash prizes, exclusive swags, and industry networking.",
+      question: "What are the Perks of participating?",
+      answer: "Cash prizes, mentorship, and industry networking.",
     },
     {
       question: "Team size?",
@@ -167,12 +168,13 @@ export default function FAQ() {
     },
     {
       question: "Where is the venue?",
-      answer: "At the TCET Campus, transformed for Industry 5.0 simulation.",
+      answer:
+        "At the TCET Campus, further will be communicated to selected participants.",
     },
     {
       question: "Is food included?",
       answer:
-        "Full meals and refreshments are provided throughout the 24 hours.",
+        "Full meals and refreshments are provided throughout the Hackathon.",
     },
   ];
 
@@ -182,7 +184,7 @@ export default function FAQ() {
     <main className="relative w-full min-h-screen bg-black overflow-hidden pt-32 pb-32 px-6">
       <div className="fixed inset-0 z-0">
         <Image
-          src={CLD_ASSETS.CHRONOLOGY_BG}
+          src={CLD_ASSETS.FAQ_BG}
           alt="Cosmic HUD"
           fill
           priority
@@ -204,7 +206,7 @@ export default function FAQ() {
             THE INTEL
           </h1>
           <p className="text-neon-cyan font-mono text-xs uppercase tracking-[0.8em] mt-4 opacity-70">
-            HackAnnova 5.0 // FAQ Database
+            Hackanova 5.0 // FAQ Database
           </p>
         </div>
 

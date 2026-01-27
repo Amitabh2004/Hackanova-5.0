@@ -5,34 +5,33 @@ import { Clock, MapPin } from "lucide-react";
 import { CLD_ASSETS } from "@/utils/cloudinary";
 const timelineData = [
   {
-    date: "2nd February 2025",
+    date: "1st February 2026",
     event: "Registration Commences",
-    status: "Completed",
+    status: "Latest",
     description:
       "Official portal opens for team registrations and individual sign-ups.",
   },
   {
-    date: "17th February 2025",
+    date: "23rd February 2026",
     event: "Deadline for Online Idea Submission",
     status: "Latest",
     description:
       "Submit your initial prototypes and project documentation for review.",
   },
   {
-    date: "18th February 2025",
-    event: "Hardware Round 1 - Virtual Screening",
+    date: "24th February 2026",
+    event: "Round 1 - Virtual Screening of Submissions",
     status: "Upcoming",
-    description:
-      "First technical screening for the Industry 5.0 hardware track.",
+    description: "First technical screening for the software & hardware track.",
   },
   {
-    date: "18th February 2025",
+    date: "25th February 2026",
     event: "Shortlisted Teams Announced",
     status: "Upcoming",
     description: "List of qualified teams for the grand finale revealed.",
   },
   {
-    date: "21st February 2025",
+    date: "27th February 2026",
     event: "Final Round of Competition",
     status: "Upcoming",
     description:
@@ -202,25 +201,32 @@ export default function Timeline() {
 
         {/* Finale Location Badge */}
         <div className="mt-20 flex flex-col items-center">
-          <div className="p-8 bg-gradient-to-r from-cyan-900/40 to-fuchsia-900/40 border border-white/20 rounded-2xl backdrop-blur-xl flex flex-col md:flex-row items-center gap-8 group hover:border-cyan-400 transition-all duration-500 max-w-2xl">
-            <div className="p-4 bg-white/10 rounded-full">
-              <MapPin
-                className="text-cyan-400 group-hover:scale-110 transition-transform"
-                size={32}
-              />
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Thakur+College+of+Engineering+and+Technology&query_place_id=ChIJnVZHduWw5zsRVTUtyCnDrsA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group"
+          >
+            <div className="p-8 bg-gradient-to-r from-cyan-900/40 to-fuchsia-900/40 border border-white/20 rounded-2xl backdrop-blur-xl flex flex-col md:flex-row items-center gap-8 group-hover:border-cyan-400 transition-all duration-500 max-w-2xl cursor-pointer">
+              <div className="p-4 bg-white/10 rounded-full">
+                <MapPin
+                  className="text-cyan-400 group-hover:scale-110 transition-transform"
+                  size={32}
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <p className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-1">
+                  Final Destination
+                </p>
+                <h4 className="text-xl font-bold text-white uppercase tracking-tight">
+                  Thakur College of Engineering & Technology
+                </h4>
+                <p className="text-sm text-white/40 mt-1">
+                  Ground Floor, Lobby Area.
+                </p>
+              </div>
             </div>
-            <div className="text-center md:text-left">
-              <p className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-1">
-                Final Destination
-              </p>
-              <h4 className="text-xl font-bold text-white uppercase tracking-tight">
-                Thakur College of Engineering & Technology
-              </h4>
-              <p className="text-sm text-white/40 mt-1">
-                Ground Floor, Multi-Purpose Hall
-              </p>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </main>

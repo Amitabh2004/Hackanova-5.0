@@ -54,7 +54,7 @@ export default function RootLayout({
     {
       name: "Discord",
       icon: <SiDiscord size={20} />,
-      href: "https://discord.gg/yourlink",
+      href: "https://discord.gg/FN9WVwfvdF",
     },
     {
       name: "Instagram",

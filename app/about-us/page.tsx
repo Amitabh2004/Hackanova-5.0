@@ -92,8 +92,9 @@ const TeamCard = ({ member }: { member: TeamMember }) => (
 export default function AboutUs() {
   const marqueeImages = CLD_ASSETS.MARQUEE_IMAGES;
 
-  // Updated Data with actual Names and Phone Numbers
+  // Re-organized hierarchical data for 3-2-3 Desktop layout
   const team = {
+    // Row 1: Technical Advisory, Technical Secretary & Associate Tech Secretary
     row1: [
       {
         name: "TISHA",
@@ -114,6 +115,7 @@ export default function AboutUs() {
         phone: "+91 8429051078",
       },
     ],
+    // Row 2: Two Technical Coordinators
     row2: [
       {
         name: "SATISH",
@@ -122,12 +124,13 @@ export default function AboutUs() {
         phone: "+91 9967142376",
       },
       {
-        name: "SATISH", // Note: Verify if there is a second Satish or if this is a duplicate
+        name: "PRAFUL",
         role: "Technical Coordinator",
-        img: CLD_ASSETS.SATISH,
-        phone: "+91 00000 00000",
+        img: CLD_ASSETS.PRAFUL,
+        phone: "+91 9004377151",
       },
     ],
+    // Row 3: Joint Tech Secretaries
     row3: [
       {
         name: "SOURISH",
@@ -177,27 +180,47 @@ export default function AboutUs() {
           <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-cyan-400/50 transition-colors">
             <h2
               style={{ fontFamily: "var(--font-boston)" }}
-              className="text-2xl md:text-4xl text-white mb-6 uppercase"
+              className="text-3xl md:text-5xl text-white mb-6 uppercase"
             >
-              HackAnnova 5.0
+              Hackanova 5.0
             </h2>
-            <p className="text-white/60 leading-relaxed font-light">
-              HackAnnova 5.0, organized by TSDW, is a 24-hour innovation sprint
-              focusing on{" "}
-              <span className="text-cyan-400">Agentic AI and Industry 5.0</span>
-              .
+            <p className="text-white leading-relaxed font-light">
+              Under the theme{" "}
+              <span className="text-blue-300 font-semibold">
+                &quot; Break the Loop, Create the Future.&quot;
+              </span>
+              , Hackanova 5.0 challenges participants to transcend traditional
+              boundaries. We are shifting the focus toward the dual pillars of
+              modern innovation:{" "}
+              <span className="text-orange-400 font-semibold">
+                Agentic AI for software and Industry 5.0 for hardware
+              </span>
+              . This is where collaboration meets creativity to foster advanced
+              tech solutions that don&apos;t just solve problems but create
+              entirely new futures.
             </p>
           </div>
           <div className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-xl hover:border-cyan-400/50 transition-colors">
             <h2
               style={{ fontFamily: "var(--font-boston)" }}
-              className="text-2xl md:text-4xl text-white mb-6 uppercase"
+              className="text-3xl md:text-5xl text-white mb-6 uppercase"
             >
               TSDW Council
             </h2>
-            <p className="text-white/60 leading-relaxed font-light">
-              The TCET Student Development and Welfare Association (TSDW) is the
-              apex student body of TCET Mumbai.
+            <p className="text-white leading-relaxed font-light">
+              The{" "}
+              <span className="text-blue-300 font-semibold">
+                TCET Student Development and Welfare Association (TSDW)
+              </span>
+              , established in 2004-05 under the guidelines of Mumbai
+              University, serves as a dynamic platform for creativity,
+              innovation, and holistic growth. Commonly known as the{" "}
+              <span className="text-orange-400 font-semibold">
+                Student Council
+              </span>
+              , TSDW represents the student body and spearheads flagship events
+              such as Hackanova. These events beautifully merge technology, art,
+              and community engagement.
             </p>
           </div>
         </div>
@@ -228,19 +251,24 @@ export default function AboutUs() {
             style={{ fontFamily: "var(--font-boston)" }}
             className="text-4xl md:text-7xl text-center text-white uppercase italic tracking-widest"
           >
-            <ScrambleText text="TECHNICAL TEAM" />
+            <ScrambleText text="TSDW TECHNICAL TEAM" />
           </h2>
 
+          {/* Row 1: 3 members desktop / 2 members mobile */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-16">
             {team.row1.map((m, i) => (
               <TeamCard key={i} member={m} />
             ))}
           </div>
+
+          {/* Row 2: 2 members desktop / 1 member mobile */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-16">
             {team.row2.map((m, i) => (
               <TeamCard key={i} member={m} />
             ))}
           </div>
+
+          {/* Row 3: 3 members desktop / 2-2-1 mobile logic via flex-wrap */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-16">
             {team.row3.map((m, i) => (
               <TeamCard key={i} member={m} />

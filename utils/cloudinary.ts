@@ -3,6 +3,7 @@
  * Account: dnbv1ezf3
  */
 
+import FAQ from "@/app/faqs/page";
 import { get } from "http";
 
 const CLOUD_NAME = "dnbv1ezf3";
@@ -37,6 +38,7 @@ export const CLD_ASSETS = {
   TIMELINE_BG: getCldImageUrl("timeline-bg_eqfux4"),
   PRIZES_BG: getCldImageUrl("prize-bg_muc38t"),
   ABOUT_US_BG: getCldImageUrl("about-bg_jlwhqh"),
+  FAQ_BG: getCldImageUrl("question-mark-5483259_1920_qn3jc7"),
   MARQUEE_IMAGES: [
     getCldImageUrl("img1_lgoide"), // Replace "img1_public_id" with your actual IDs
     getCldImageUrl("img2_ie9o8v"),
@@ -72,6 +74,7 @@ export const CLD_ASSETS = {
   PIYUSH: getCldImageUrl("piyush_wxbwdl"),
   AMITABH: getCldImageUrl("amitabh_h8ujhr"),
   SATISH: getCldImageUrl("satish_mkaxb3"),
+  PRAFUL: getCldImageUrl("slazzer-preview-pp4qr_tqkdcs"),
   SOURISH: getCldImageUrl("sourish_qrbrfp"),
   SMITA: getCldImageUrl("smita_kpx76s"),
   SIDDHESH: getCldImageUrl("siddhesh_i9m2ew"),

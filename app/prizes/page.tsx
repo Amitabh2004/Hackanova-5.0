@@ -132,14 +132,9 @@ export default function Prizes() {
             Software Pool
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-            <PrizeCard rank={2} amount="20000" label="Elite Scout" />
-            <PrizeCard
-              rank={1}
-              amount="30000"
-              label="Grand Architect"
-              isMain={true}
-            />
-            <PrizeCard rank={3} amount="10000" label="Rising Node" />
+            <PrizeCard rank={2} amount="35000" label="Runner Up" />
+            <PrizeCard rank={1} amount="50000" label="Winner" isMain={true} />
+            <PrizeCard rank={3} amount="25000" label="2nd Runner Up" />
           </div>
         </section>
 
@@ -149,13 +144,8 @@ export default function Prizes() {
             Hardware Pool
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-center gap-16">
-            <PrizeCard
-              rank={1}
-              amount="15000"
-              label="Master Integrator"
-              isMain={true}
-            />
-            <PrizeCard rank={2} amount="8000" label="Circuit Lead" />
+            <PrizeCard rank={1} amount="20000" label="Winner" isMain={true} />
+            <PrizeCard rank={2} amount="10000" label="Runner Up" />
           </div>
         </section>
       </div>
