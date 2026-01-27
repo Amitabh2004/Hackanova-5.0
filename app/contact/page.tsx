@@ -146,8 +146,8 @@ export default function Contact() {
           <ContactModule
             icon={LinkIcon}
             label="Neural_Archive"
-            value="Linktree/HackAnnova"
-            href="https://linktr.ee"
+            value="Linktree/Hackanova5.0"
+            href="https://linktr.ee/Hackanova5.0"
           />
           <ContactModule
             icon={MapPin}
