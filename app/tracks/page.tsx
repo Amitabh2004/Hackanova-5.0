@@ -59,7 +59,7 @@ export default function Tracks() {
               Agentic AI Paradigm
             </p>
             <a
-              href="/software-brochure.pdf"
+              href="https://drive.google.com/file/d/1f2kKRQYnh1EkLKiaLYqM_aQDT0tuE2xS/view?usp=sharing"
               className="px-10 py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(6,182,212,0.4)]"
             >
               Get Brochure
@@ -91,7 +91,7 @@ export default function Tracks() {
               Industry 5.0 Paradigm
             </p>
             <a
-              href="/hardware-brochure.pdf"
+              href="https://drive.google.com/file/d/1othrF0v69t5nrOL5EKuy7tWEAPR0wcte/view?usp=sharing"
               className="px-10 py-4 bg-orange-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
             >
               Get Brochure
@@ -119,9 +119,17 @@ export default function Tracks() {
               "INDIVIDUAL APPLICATIONS WILL NOT BE ACCEPTED.",
               "REGISTRATION IS ABSOLUTELY FREE FOR ALL THE PARTICIPANTS.",
               <>
-                REGISTER YOUR TEAMS ON THIS{" "}
-                <SystemLink text="GOOGLE FORM" href="#" /> AND THEN FOLLOW THE
-                STEPS FOR PLATFORM SUBMISSION.
+                REGISTER YOUR TEAMS ON GOOGLE FORMS FOR{" "}
+                <SystemLink
+                  text="SOFTWARE"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfxED0WfB9nTXuhDezSkb9do77uXBQ-pQf__SHrHxf1byAMhg/viewform?usp=sharing&ouid=110661469901935126710"
+                />{" "}
+                OR{" "}
+                <SystemLink
+                  text="HARDWARE"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeVx6p2Eu_oeZ8-W7QjAKMI7jBziTbct-p0uBAoBaDWdP_LBw/viewform?usp=sharing&ouid=110661469901935126710"
+                />{" "}
+                TRACK AND THEN FOLLOW THE STEPS FOR PLATFORM SUBMISSION.
               </>,
               <>
                 ALL COMMUNICATION WILL TAKE PLACE VIA{" "}
@@ -133,9 +141,17 @@ export default function Tracks() {
               </>,
               "YOUR IDEA SHOULD ALIGN WITH THE GENERALIZED HACKATHON THEME.",
               <>
-                USE THE PPT TEMPLATE TO PREPARE A{" "}
-                <SystemLink text="PPT" href="#" /> FOR YOUR IDEA FOR{" "}
-                <SystemLink text="DEVFOLIO" href="#" />.
+                USE THE PPT TEMPLATE TO PREPARE A PPT FOR YOUR IDEA OF{" "}
+                <SystemLink
+                  text="SOFTWARE"
+                  href="https://drive.google.com/file/d/1JkfV826YoXujfCEzSP5TZTCKNyVcvaOA/view"
+                />{" "}
+                OR{" "}
+                <SystemLink
+                  text="HARDWARE"
+                  href="https://drive.google.com/file/d/1oqeUhloN7_ugM3zW8569rEQDhTMl0FwD/view"
+                />{" "}
+                FOR <SystemLink text="DEVFOLIO" href="#" />.
               </>,
               "ALL THE TEAM MEMBERS MUST UPLOAD THE SAME PPT TO THE DEVFOLIO FORM.",
               "THE TEAM LEADER SHOULD CREATE A TEAM AND SHARE THE INVITE CODE.",
