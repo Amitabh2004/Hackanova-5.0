@@ -1,11 +1,24 @@
 "use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { CLD_ASSETS } from "../utils/cloudinary"; // Import your new links
+import { CLD_ASSETS } from "../utils/cloudinary";
 
 export default function Home() {
   const cloudName = "dnbv1ezf3";
   const videoPublicId = "bg-video2_br1xof";
   const videoUrl = `https://res.cloudinary.com/${cloudName}/video/upload/q_auto,f_auto/${videoPublicId}.mp4`;
+
+  // --- DEVFOLIO SDK INTEGRATION ---
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <main className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
@@ -25,11 +38,11 @@ export default function Home() {
       {/* --- HERO CONTENT --- */}
       <div className="relative z-10 flex flex-col items-center justify-center p-4">
         <Image
-          src={CLD_ASSETS.HERO_LOGO} // Now using Cloudinary
+          src={CLD_ASSETS.HERO_LOGO}
           alt="HackAnnova 5.0 Hero Logo"
           width={1000}
           height={600}
-          priority // Prioritizing the LCP element
+          priority
           className="w-[90vw] md:w-[70vw] lg:w-[60vw] max-w-[600px] h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-4"
         />
 
@@ -41,20 +54,14 @@ export default function Home() {
             Register for Free
           </span>
 
-          <a
-            href="YOUR_DEVFOLIO_LINK_HERE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative flex items-center justify-center px-8 py-3 md:px-12 md:py-4 bg-white border border-neon-cyan/50 transition-all duration-300 hover:border-neon-cyan hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] rounded-none"
-          >
-            <Image
-              src={CLD_ASSETS.DEVFOLIO_LOGO} // Optimized Devfolio Logo from Cloudinary
-              alt="DEVFOLIO LOGO"
-              width={200}
-              height={100}
-              className="h-7 md:h-10 w-auto object-contain brightness-110"
-            />
-          </a>
+          {/* --- DEVFOLIO BUTTON ELEMENT --- */}
+          {/* Note: Replace 'YOUR-HACKATHON-SLUG' with your actual slug */}
+          <div 
+            className="apply-button" 
+            data-hackathon-slug="hackanova-5-0" 
+            data-button-theme="light"
+            style={{ height: '44px', width: '312px' }}
+          ></div>
         </div>
       </div>
     </main>
