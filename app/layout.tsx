@@ -82,7 +82,7 @@ export default function RootLayout({
               </button>
               <div className="hidden md:block">
                 <Link href="/" className="group block">
-                  <Image src={CLD_ASSETS.FAVICON} alt="HackAnnova Logo" width={200} height={200} priority className="h-17 w-auto ml-3 object-contain pl-5 transition-all duration-300 group-hover:scale-105" />
+                  <Image src={CLD_ASSETS.FAVICON} alt="Hackanova Logo" width={200} height={200} priority className="h-17 w-auto ml-3 object-contain pl-5 transition-all duration-300 group-hover:scale-105" />
                 </Link>
               </div>
             </div>
