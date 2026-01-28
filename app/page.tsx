@@ -80,7 +80,7 @@ export default function Home() {
           {/* Branding Logo for Visibility */}
           <div className="mt-2">
             <Image
-              src={CLD_ASSETS.DEVFOLIO_LOGO}
+              src="/devfolio1.png"
               alt="DEVFOLIO LOGO"
               width={150}
               height={80}
