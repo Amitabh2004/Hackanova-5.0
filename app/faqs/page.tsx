@@ -151,7 +151,7 @@ export default function FAQ() {
         "Students with passion for solving problems. All skill levels are welcome.",
     },
     {
-      question: "Is there any registration fee free?",
+      question: "Is there any registration fee?",
       answer: "No, Hackanova 5.0 is completely free for shortlisted teams.",
     },
     {
