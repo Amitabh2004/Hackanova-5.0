@@ -235,7 +235,7 @@ export default function RootLayout({
         {/* --- FOOTER --- */}
         <footer className="w-full py-4 bg-black border-t border-white/5 z-10">
           <p className="text-center text-[9px] md:text-[11px] text-white/40 uppercase tracking-[0.2em] font-mono">
-            © 2025 All rights reserved | Made with{" "}
+            © 2026 All rights reserved | Made with{" "}
             <span className="text-neon-cyan">❤</span> by the Hackanova Team
           </p>
         </footer>
