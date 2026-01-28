@@ -38,7 +38,7 @@ export default function Home() {
           
           {/* Visible Sponsor Logo for Verification */}
           <div className="mt-2 bg-white/10 p-2 rounded-lg">
-            <Image src="/devfolio.png" alt="DEVFOLIO LOGO" width={150} height={80} className="h-8 md:h-10 w-auto object-contain" />
+            <Image src="/devfolio.png" alt="DEVFOLIO LOGO" width={150} height={80} className="h-8 md:h-10 w-auto object-cover" />
           </div>
         </div>
       </div>
