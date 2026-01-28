@@ -49,7 +49,7 @@ export default function Home() {
           >
             <Image
               src={CLD_ASSETS.DEVFOLIO_LOGO} // Optimized Devfolio Logo from Cloudinary
-              alt="Devfolio"
+              alt="DEVFOLIO LOGO"
               width={200}
               height={100}
               className="h-7 md:h-10 w-auto object-contain brightness-110"
