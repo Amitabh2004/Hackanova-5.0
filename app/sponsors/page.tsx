@@ -81,7 +81,7 @@ export default function Sponsors() {
 
               <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-110">
                 <Image
-                  src={url}
+                  src="/devfolio1.png"
                   // Verification critical: first logo gets the mandatory alt tag
                   alt={i === 0 ? "DEVFOLIO LOGO" : `Sponsor Partner ${i}`}
                   fill
