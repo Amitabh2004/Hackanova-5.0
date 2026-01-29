@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { CLD_ASSETS } from "../utils/cloudinary";
+import Sponsors from "./sponsors/page";
 
 export default function Home() {
   const videoUrl = `https://res.cloudinary.com/dnbv1ezf3/video/upload/q_auto,f_auto/bg-video2_br1xof.mp4`;
@@ -42,6 +43,7 @@ export default function Home() {
       height="80"
     />
   </div>
+  <Sponsors />
 </section>
 
         <div className="flex flex-col items-center gap-4 mt-6">
