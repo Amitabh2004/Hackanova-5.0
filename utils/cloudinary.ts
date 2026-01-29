@@ -61,7 +61,7 @@ export const CLD_ASSETS = {
   FAVICON: getCldImageUrl("1000193944_joxrs0"),
   TSDW_LOGO: getCldImageUrl("tsdw2-logo_eigacr"),
   SPONSOR_LOGOS: [
-    getCldImageUrl("img1_mdaulu"), // Replace with actual Public IDs from dashboard
+    // getCldImageUrl("img1_mdaulu"), // Replace with actual Public IDs from dashboard
     getCldImageUrl("img2_urn35c"),
     getCldImageUrl("img3_ppalh5"),
     getCldImageUrl("img4_uxhowu"),

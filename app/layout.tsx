@@ -5,6 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Home, Info, Heart, Mail, HelpCircle, Menu, X } from "lucide-react";
+import {
+  SiDiscord,
+  SiInstagram,
+  SiWhatsapp,
+  SiYoutube,
+  SiGmail,
+} from "react-icons/si";
 import { CLD_ASSETS } from "@/utils/cloudinary";
 
 const bostonCaps = localFont({
@@ -20,18 +27,15 @@ export default function RootLayout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
 
-  // ✅ DEVFOLIO SDK - Load once globally
+  // --- GLOBAL DEVFOLIO SDK LOADING ---
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
-
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+      if (document.body.contains(script)) document.body.removeChild(script);
     };
   }, []);
 
@@ -51,6 +55,34 @@ export default function RootLayout({
     { name: "FAQ", icon: <HelpCircle size={24} />, href: "/faqs" },
   ];
 
+  const socialItems = [
+    {
+      name: "Discord",
+      icon: <SiDiscord size={20} />,
+      href: "https://discord.gg/FN9WVwfvdF",
+    },
+    {
+      name: "Instagram",
+      icon: <SiInstagram size={20} />,
+      href: "https://instagram.com/tcet_tsdw",
+    },
+    {
+      name: "WhatsApp",
+      icon: <SiWhatsapp size={20} />,
+      href: "https://wa.me/918429051078?text=Hi%20HackAnnova%20Team!",
+    },
+    {
+      name: "YouTube",
+      icon: <SiYoutube size={20} />,
+      href: "https://youtube.com/@tcet_tsdw",
+    },
+    {
+      name: "Gmail",
+      icon: <SiGmail size={20} />,
+      href: "mailto:tcet.hackanova@gmail.com",
+    },
+  ];
+
   return (
     <html lang="en">
       <head>
@@ -62,22 +94,15 @@ export default function RootLayout({
       <body
         className={`${bostonCaps.variable} antialiased text-white selection:bg-neon-cyan/30 bg-black min-h-screen flex flex-col`}
       >
-        {/* ✅ DEVFOLIO VERIFICATION - Hidden logo with exact ALT tag required */}
-        <div style={{ display: "none" }} aria-hidden="true">
-          <img src="/devfolio1.png" alt="DEVFOLIO LOGO" />
-        </div>
-
+        {/* --- HEADER --- */}
         <header
-          className={`fixed top-0 left-0 w-full z-50 pt-4 md:pt-0 px-6 md:px-0 pointer-events-none transition-transform duration-500 ease-in-out ${
-            showHeader ? "translate-y-0" : "-translate-y-full"
-          }`}
+          className={`fixed top-0 left-0 w-full z-50 pt-4 md:pt-0 px-6 md:px-0 pointer-events-none transition-transform duration-500 ease-in-out ${showHeader ? "translate-y-0" : "-translate-y-full"}`}
         >
           <div className="flex md:grid md:grid-cols-3 items-center justify-between w-full mx-auto relative px-4">
             <div className="flex items-center justify-start pointer-events-auto">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden text-white p-2 hover:text-neon-cyan transition-colors"
-                aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
               </button>
@@ -120,7 +145,7 @@ export default function RootLayout({
               />
             </div>
 
-            {/* Mobile Menu Dropdown */}
+            {/* --- MOBILE MENU DROPDOWN --- */}
             {isMenuOpen && (
               <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl flex flex-col items-center py-10 gap-8 pointer-events-auto border-b border-white/10 shadow-2xl">
                 {["Tracks", "Prizes", "Timeline"].map((item) => (
@@ -139,6 +164,7 @@ export default function RootLayout({
           </div>
         </header>
 
+        {/* --- LEFT NAVIGATION SIDEBAR --- */}
         <aside className="fixed z-40 flex items-center bg-black/5 backdrop-blur-sm border border-white/5 shadow-2xl pointer-events-auto md:h-fit md:left-0 md:top-1/2 md:-translate-y-1/2 md:ml-4 md:flex-col md:rounded-2xl md:py-10 md:px-3 md:gap-5 bottom-0 left-0 w-full md:w-auto flex-row justify-around py-3 rounded-t-2xl md:rounded-2xl">
           {sidebarItems.map((item) => (
             <Link
@@ -151,12 +177,36 @@ export default function RootLayout({
               </div>
               <span
                 style={{ fontFamily: "var(--font-boston)" }}
-                className="text-[8px] md:text-[10px] uppercase tracking-wider text-white/70"
+                className="text-[8px] md:text-[10px] uppercase tracking-wider text-white/70 group-hover:text-white transition-colors"
               >
                 {item.name}
               </span>
             </Link>
           ))}
+        </aside>
+
+        {/* --- RIGHT SOCIAL SIDEBAR (RESTORED) --- */}
+        <aside className="hidden md:flex fixed z-40 right-4 top-1/2 -translate-y-1/2 flex-col items-center gap-6 bg-white/5 backdrop-blur-md border border-white/10 py-8 px-3 rounded-full pointer-events-auto">
+          {socialItems.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex items-center justify-center transition-all hover:scale-125"
+            >
+              <span
+                style={{ fontFamily: "var(--font-boston)" }}
+                className="absolute right-full mr-4 px-2 py-1 bg-neon-cyan text-black text-[10px] uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap"
+              >
+                {social.name}
+              </span>
+              <div className="text-white/60 group-hover:text-white transition-colors drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(0,243,255,0.8)]">
+                {social.icon}
+              </div>
+            </a>
+          ))}
+          <div className="w-[1px] h-12 bg-gradient-to-b from-neon-cyan to-transparent mt-2 opacity-50" />
         </aside>
 
         <main className="flex-grow">{children}</main>
