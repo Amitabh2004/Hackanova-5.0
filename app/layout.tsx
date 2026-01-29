@@ -212,6 +212,13 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
 
         <footer className="w-full py-4 bg-black border-t border-white/5 z-10">
+          <img
+            src="/devfolio1.png"
+            alt="DEVFOLIO LOGO"
+            width="120"
+            height="40"
+          />
+
           <p className="text-center text-[9px] md:text-[11px] text-white/40 uppercase tracking-[0.2em] font-mono">
             © 2026 All rights reserved | Made with{" "}
             <span className="text-neon-cyan">❤</span> by the Hackanova Team
