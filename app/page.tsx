@@ -29,6 +29,20 @@ export default function Home() {
           priority
           className="w-[90vw] md:w-[70vw] lg:w-[60vw] max-w-[600px] h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-4"
         />
+        <section className="w-full flex flex-col items-center mt-16">
+  <h2 className="text-white text-xl md:text-2xl mb-6">
+    Our Partners
+  </h2>
+
+  <div className="bg-white rounded-xl p-6 flex items-center justify-center">
+    <img
+      src="/devfolio1.png"
+      alt="Devfolio"
+      width="200"
+      height="80"
+    />
+  </div>
+</section>
 
         <div className="flex flex-col items-center gap-4 mt-6">
           <span
@@ -47,14 +61,7 @@ export default function Home() {
           ></div>
 
           {/* Visible Logo for Crawler */}
-          <div className="mt-2 bg-white/10 p-2 rounded-lg">
-            <img
-              src="/devfolio1.png"
-              alt="DEVFOLIO LOGO"
-              width="150"
-              height="80"
-            />
-          </div>
+        
         </div>
       </div>
     </main>
