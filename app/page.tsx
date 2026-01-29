@@ -38,7 +38,7 @@ export default function Home() {
   <div className="bg-white rounded-xl p-6 flex items-center justify-center">
     <img
       src="/devfolio1.png"
-      alt="Devfolio"
+      alt="DEVFOLIO LOGO"
       width="200"
       height="80"
     />
