@@ -1,7 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import ClientLayout from "./ClientLayout";
-import { CLD_ASSETS } from "@/utils/cloudinary";
+// import { CLD_ASSETS } from "@/utils/cloudinary";
 import Script from "next/script";
 
 const bostonCaps = localFont({

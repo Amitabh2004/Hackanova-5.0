@@ -31,20 +31,18 @@ export default function Home() {
           className="w-[90vw] md:w-[70vw] lg:w-[60vw] max-w-[600px] h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-4"
         />
         <section className="w-full flex flex-col items-center mt-16">
-  <h2 className="text-white text-xl md:text-2xl mb-6">
-    Our Partners
-  </h2>
+          <h2 className="text-white text-xl md:text-2xl mb-6">Our Partners</h2>
 
-  <div className="bg-white rounded-xl p-6 flex items-center justify-center">
-    <img
-      src="/devfolio1.png"
-      alt="DEVFOLIO LOGO"
-      width="200"
-      height="80"
-    />
-  </div>
-  <Sponsors />
-</section>
+          <div className="bg-white rounded-xl p-6 flex items-center justify-center">
+            <img
+              src="/devfolio1.png"
+              alt="DEVFOLIO LOGO"
+              width="200"
+              height="80"
+            />
+          </div>
+          <Sponsors />
+        </section>
 
         <div className="flex flex-col items-center gap-4 mt-6">
           <span
@@ -58,12 +56,17 @@ export default function Home() {
           <div
             className="apply-button"
             data-hackathon-slug="hackanova-5-0"
-            data-button-theme="light"
+            data-button-theme="dark"
             style={{ height: "44px", width: "312px" }}
           ></div>
 
           {/* Visible Logo for Crawler */}
-        
+          <img
+            src="/devfolio1.png"
+            alt="DEVFOLIO LOGO"
+            width="200"
+            height="80"
+          />
         </div>
       </div>
     </main>
