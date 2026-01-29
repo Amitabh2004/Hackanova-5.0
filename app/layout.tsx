@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import ClientLayout from "./ClientLayout";
 import { CLD_ASSETS } from "@/utils/cloudinary";
+import Script from "next/script";
 
 const bostonCaps = localFont({
   src: "../public/fonts/BostonCaps-nqZJ.ttf",
@@ -36,6 +37,10 @@ export default function RootLayout({
 
         {/* Client interactive layout */}
         <ClientLayout>{children}</ClientLayout>
+        <Script
+          src="https://apply.devfolio.co/v2/sdk.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
