@@ -193,7 +193,7 @@ export default function AboutUs() {
               boundaries. We are shifting the focus toward the dual pillars of
               modern innovation:{" "}
               <span className="text-orange-400 font-semibold">
-                Agentic AI for software and Industry 5.0 for hardware
+                Agentic AI for software and Industry 4.0 for hardware
               </span>
               . This is where collaboration meets creativity to foster advanced
               tech solutions that don&apos;t just solve problems but create

@@ -2,13 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import { CLD_ASSETS } from "../utils/cloudinary";
-import Sponsors from "./sponsors/page";
 
 export default function Home() {
   const videoUrl = `https://res.cloudinary.com/dnbv1ezf3/video/upload/q_auto,f_auto/bg-video2_br1xof.mp4`;
 
   return (
     <main className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* --- BACKGROUND VIDEO LAYER --- */}
       <div className="fixed inset-0 -z-10 w-full h-full">
         <video
           autoPlay
@@ -21,28 +21,16 @@ export default function Home() {
         </video>
       </div>
 
+      {/* --- HERO CONTENT --- */}
       <div className="relative z-10 flex flex-col items-center justify-center p-4">
         <Image
-          src={CLD_ASSETS.HERO_LOGO}
+          src="/logo-date5.png"
           alt="HackAnnova 5.0 Hero Logo"
           width={1000}
           height={600}
           priority
           className="w-[90vw] md:w-[70vw] lg:w-[60vw] max-w-[600px] h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] mb-4"
         />
-        <section className="w-full flex flex-col items-center mt-16">
-          <h2 className="text-white text-xl md:text-2xl mb-6">Our Partners</h2>
-
-          <div className="bg-white rounded-xl p-6 flex items-center justify-center">
-            <img
-              src="/devfolio1.png"
-              alt="DEVFOLIO LOGO"
-              width="200"
-              height="80"
-            />
-          </div>
-          <Sponsors />
-        </section>
 
         <div className="flex flex-col items-center gap-4 mt-6">
           <span
@@ -52,21 +40,22 @@ export default function Home() {
             Register for Free
           </span>
 
-          {/* Official Devfolio Button */}
-          <div
-            className="apply-button"
-            data-hackathon-slug="hackanova-5-0"
-            data-button-theme="dark"
-            style={{ height: "44px", width: "312px" }}
-          ></div>
-
-          {/* Visible Logo for Crawler */}
-          <img
-            src="/devfolio1.png"
-            alt="DEVFOLIO LOGO"
-            width="200"
-            height="80"
-          />
+          {/* --- CUSTOM APPLY BUTTON --- */}
+          {/* Replace 'YOUR_LINK_HERE' with your actual registration link */}
+          <a
+            href="https://hackanova-5-0.devfolio.co/overview?slug=hackanova-5-0.devfolio.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative transition-all duration-300 hover:scale-105 active:scale-95"
+          >
+            <Image
+              src="/apply-btn.png"
+              alt="Apply Button"
+              width={312}
+              height={44}
+              className="w-64 md:w-80 h-auto object-contain mix-blend-screen drop-shadow-[0_0_15px_rgba(0,243,255,0.4)]"
+            />
+          </a>
         </div>
       </div>
     </main>

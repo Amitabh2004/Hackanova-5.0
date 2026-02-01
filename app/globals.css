@@ -21,10 +21,12 @@ body {
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, sans-serif;
 }
 
 /* --- Typography & Glow Effects --- */
 .nav-font-style {
+  font-family: var(--font-boston);
   font-weight: 900;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0 0 2px rgba(0, 243, 255, 0.5));
@@ -36,7 +38,9 @@ body {
   transform: scale(1.05);
   color: var(--color-neon-cyan);
 }
-
+.font-boston {
+  font-family: var(--font-boston), sans-serif !important;
+}
 /* --- Infinite Marquee (For the 30 Archive Photos) --- */
 @keyframes marquee {
   0% {

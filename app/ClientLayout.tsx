@@ -110,7 +110,7 @@ export default function ClientLayout({
                 <Link
                   key={item}
                   href={`/${item.toLowerCase()}`}
-                  className="text-sm md:text-2xl uppercase tracking-[0.25em] hover:text-neon-cyan transition-all"
+                  className="font-boston text-sm md:text-2xl uppercase tracking-[0.25em] hover:text-neon-cyan transition-all"
                 >
                   {item}
                 </Link>
@@ -146,7 +146,7 @@ export default function ClientLayout({
       </header>
 
       {/* LEFT SIDEBAR */}
-      <aside className="fixed z-40 flex items-center bg-black/5 backdrop-blur-sm border border-white/5 shadow-2xl pointer-events-auto md:h-fit md:left-0 md:top-1/2 md:-translate-y-1/2 md:ml-4 md:flex-col md:rounded-2xl md:py-10 md:px-3 md:gap-5 bottom-0 left-0 w-full md:w-auto flex-row justify-around py-3 rounded-t-2xl md:rounded-2xl">
+      <aside className="font-boston fixed z-40 flex items-center bg-black/5 backdrop-blur-sm border border-white/5 shadow-2xl pointer-events-auto md:h-fit md:left-0 md:top-1/2 md:-translate-y-1/2 md:ml-4 md:flex-col md:rounded-2xl md:py-10 md:px-3 md:gap-5 bottom-0 left-0 w-full md:w-auto flex-row justify-around py-3 rounded-t-2xl md:rounded-2xl">
         {sidebarItems.map((item) => (
           <Link
             key={item.name}
@@ -187,7 +187,6 @@ export default function ClientLayout({
       <main className="flex-grow">{children}</main>
 
       <footer className="w-full py-4 bg-black border-t border-white/5 z-10 flex flex-col items-center gap-2">
-        <img src="/devfolio1.png" alt="DEVFOLIO LOGO" width="120" height="40" />
         <p className="text-center text-[9px] md:text-[11px] text-white/40 uppercase tracking-[0.2em] font-mono">
           © 2026 All rights reserved | Made with{" "}
           <span className="text-neon-cyan">❤</span> by the Hackanova Team

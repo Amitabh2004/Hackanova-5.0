@@ -151,7 +151,12 @@ export default function Tracks() {
                   text="HARDWARE"
                   href="https://drive.google.com/file/d/1oqeUhloN7_ugM3zW8569rEQDhTMl0FwD/view"
                 />{" "}
-                FOR <SystemLink text="DEVFOLIO" href="#" />.
+                FOR{" "}
+                <SystemLink
+                  text="DEVFOLIO"
+                  href="https://hackanova-5-0.devfolio.co/overview?slug=hackanova-5-0.devfolio.co"
+                />
+                .
               </>,
               "ALL THE TEAM MEMBERS MUST UPLOAD THE SAME PPT TO THE DEVFOLIO FORM.",
               "THE TEAM LEADER SHOULD CREATE A TEAM AND SHARE THE INVITE CODE.",

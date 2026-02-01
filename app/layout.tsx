@@ -30,11 +30,6 @@ export default function RootLayout({
       <body
         className={`${bostonCaps.variable} antialiased text-white selection:bg-neon-cyan/30 bg-black min-h-screen flex flex-col`}
       >
-        {/* Devfolio logo visible for crawlers */}
-        <div style={{ display: "none" }} aria-hidden="true">
-          <img src="/devfolio1.png" alt="DEVFOLIO LOGO" />
-        </div>
-
         {/* Client interactive layout */}
         <ClientLayout>{children}</ClientLayout>
         <Script
