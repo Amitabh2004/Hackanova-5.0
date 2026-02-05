@@ -53,7 +53,7 @@ export default function Home() {
               alt="Apply Button"
               width={250}
               height={30}
-              className="w-64 md:w-40 h-auto object-contain bg-amber-50 p-4 mix-blend-screen drop-shadow-[0_0_15px_rgba(0,243,255,0.4)]"
+              className="w-32 md:w-40 h-auto object-contain bg-amber-50 p-4 mix-blend-screen drop-shadow-[0_0_15px_rgba(0,243,255,0.4)]"
             />
           </a>
         </div>

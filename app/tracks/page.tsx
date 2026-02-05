@@ -59,7 +59,8 @@ export default function Tracks() {
               Agentic AI Paradigm
             </p>
             <a
-              href="https://drive.google.com/file/d/1f2kKRQYnh1EkLKiaLYqM_aQDT0tuE2xS/view?usp=sharing"
+              href="https://drive.google.com/file/d/1SAhcVk1OLnxeSbQWlUT2NqT-vmPHOyl_/view?usp=sharing"
+              target="_blank"
               className="px-10 py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(6,182,212,0.4)]"
             >
               Get Brochure
@@ -91,7 +92,8 @@ export default function Tracks() {
               Industry 5.0 Paradigm
             </p>
             <a
-              href="https://drive.google.com/file/d/1nGuCY5-5k3Y8XE5sfQWb1Z-E177d7yWP/view?usp=sharing"
+              href="https://drive.google.com/file/d/1pH4J0DcBic3frT0NByzbU-4_jjvtEbpR/view?usp=sharing"
+              target="_blank"
               className="px-10 py-4 bg-orange-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
             >
               Get Brochure
@@ -127,7 +129,7 @@ export default function Tracks() {
                 OR{" "}
                 <SystemLink
                   text="HARDWARE"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSeVx6p2Eu_oeZ8-W7QjAKMI7jBziTbct-p0uBAoBaDWdP_LBw/viewform?usp=sharing&ouid=110661469901935126710"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeVx6p2Eu_oeZ8-W7QjAKMI7jBziTbct-p0uBAoBaDWdP_LBw/viewform"
                 />{" "}
                 TRACK AND THEN FOLLOW THE STEPS FOR PLATFORM SUBMISSION.
               </>,
@@ -149,7 +151,7 @@ export default function Tracks() {
                 OR{" "}
                 <SystemLink
                   text="HARDWARE"
-                  href="https://drive.google.com/file/d/1oqeUhloN7_ugM3zW8569rEQDhTMl0FwD/view"
+                  href="https://drive.google.com/file/d/1mSb0sGfmRSwhUAvSWsNK6b2ONa5QdN7c/view"
                 />{" "}
                 FOR{" "}
                 <SystemLink
