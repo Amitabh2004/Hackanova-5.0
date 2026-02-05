@@ -24,7 +24,7 @@ export default function Home() {
       {/* --- HERO CONTENT --- */}
       <div className="relative z-10 flex flex-col items-center justify-center p-4">
         <Image
-          src="/logo-date5.png"
+          src="/logo-date6.png"
           alt="HackAnnova 5.0 Hero Logo"
           width={1000}
           height={600}
@@ -49,11 +49,11 @@ export default function Home() {
             className="group relative transition-all duration-300 hover:scale-105 active:scale-95"
           >
             <Image
-              src="/apply-btn.png"
+              src="/devfolio2.png"
               alt="Apply Button"
-              width={312}
-              height={44}
-              className="w-64 md:w-80 h-auto object-contain mix-blend-screen drop-shadow-[0_0_15px_rgba(0,243,255,0.4)]"
+              width={250}
+              height={30}
+              className="w-64 md:w-40 h-auto object-contain bg-amber-50 p-4 mix-blend-screen drop-shadow-[0_0_15px_rgba(0,243,255,0.4)]"
             />
           </a>
         </div>

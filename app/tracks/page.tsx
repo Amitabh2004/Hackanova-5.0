@@ -91,7 +91,7 @@ export default function Tracks() {
               Industry 5.0 Paradigm
             </p>
             <a
-              href="https://drive.google.com/file/d/1othrF0v69t5nrOL5EKuy7tWEAPR0wcte/view?usp=sharing"
+              href="https://drive.google.com/file/d/1nGuCY5-5k3Y8XE5sfQWb1Z-E177d7yWP/view?usp=sharing"
               className="px-10 py-4 bg-orange-500 text-black font-bold uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
             >
               Get Brochure

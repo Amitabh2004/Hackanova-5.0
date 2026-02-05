@@ -12,26 +12,26 @@ const timelineData = [
       "Official portal opens for team registrations and individual sign-ups.",
   },
   {
-    date: "23rd February 2026",
+    date: "9th March 2026",
     event: "Deadline for Online Idea Submission",
     status: "Latest",
     description:
       "Submit your initial prototypes and project documentation for review.",
   },
   {
-    date: "24th February 2026",
+    date: "10th March 2026",
     event: "Round 1 - Virtual Screening of Submissions",
     status: "Upcoming",
     description: "First technical screening for the software & hardware track.",
   },
   {
-    date: "25th February 2026",
+    date: "11th March 2026",
     event: "Shortlisted Teams Announced",
     status: "Upcoming",
     description: "List of qualified teams for the grand finale revealed.",
   },
   {
-    date: "27th February 2026",
+    date: "13th March 2026",
     event: "Final Round of Competition",
     status: "Upcoming",
     description:
@@ -49,7 +49,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const target = new Date("February 27, 2026 00:00:00").getTime();
+    const target = new Date("2026-03-13T00:00:00").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const difference = target - now;
