@@ -62,7 +62,7 @@ export const CLD_ASSETS = {
   TSDW_LOGO: getCldImageUrl("tsdw2-logo_eigacr"),
   SPONSOR_LOGOS: [
     // getCldImageUrl("img1_mdaulu"), // Replace with actual Public IDs from dashboard
-    getCldImageUrl("img2_urn35c"),
+    getCldImageUrl("8cd3af34-3870-4722-88ad-fb4b36d05d8f_e9i7hz"),
     getCldImageUrl("img3_ppalh5"),
     getCldImageUrl("img4_uxhowu"),
     getCldImageUrl("img5_kwjtdt"),
