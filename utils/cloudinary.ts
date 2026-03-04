@@ -68,7 +68,7 @@ export const CLD_ASSETS = {
     getCldImageUrl("5e638ad4-5ff8-4d33-bb89-b1f6ba6f6517_pcynat"),
     getCldImageUrl("interviewbuddy_vbysix"),
     getCldImageUrl("img3_ppalh5"),
-    getCldImageUrl("img8_ikyvqp"),
+    getCldImageUrl("img4_uxhowu"),
   ],
   TISHA: getCldImageUrl("tisha_amod66"),
   PIYUSH: getCldImageUrl("piyush_wxbwdl"),
