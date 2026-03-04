@@ -63,10 +63,10 @@ export const CLD_ASSETS = {
   SPONSOR_LOGOS: [
     // getCldImageUrl("img1_mdaulu"), // Replace with actual Public IDs from dashboard
     getCldImageUrl("8cd3af34-3870-4722-88ad-fb4b36d05d8f_e9i7hz"),
-    getCldImageUrl("img3_ppalh5"),
-    getCldImageUrl("img4_uxhowu"),
-    getCldImageUrl("img5_kwjtdt"),
-    getCldImageUrl("img6_zbx87d"),
+    getCldImageUrl("CodeCrafters.io_full_logo_Dark_text_po8cev"),
+    getCldImageUrl("b6f75cbf-3c51-4f8b-8a02-297b2939d2eb_u2pxjx"),
+    getCldImageUrl("5e638ad4-5ff8-4d33-bb89-b1f6ba6f6517_pcynat"),
+    getCldImageUrl("interviewbuddy_vbysix"),
     getCldImageUrl("img7_wqadqn"),
     getCldImageUrl("img8_ikyvqp"),
   ],
